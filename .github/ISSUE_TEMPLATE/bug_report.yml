@@ -1,0 +1,79 @@
+name: 🐛 Bug Report
+description: Report a bug with Claude Desktop + Notion integration
+title: "[BUG] "
+labels: ["bug", "needs-triage"]
+body:
+  - type: dropdown
+    id: component
+    attributes:
+      label: Component
+      description: Which component has the issue?
+      options:
+        - MCP Server
+        - Claude Desktop Config
+        - Notion Integration
+        - Authentication
+        - Database Operations
+        - Other
+    validations:
+      required: true
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Severity
+      options:
+        - Critical (blocks all usage)
+        - High (major feature broken)
+        - Medium (workaround exists)
+        - Low (minor issue)
+    validations:
+      required: true
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: Steps to Reproduce
+      description: Exact steps to recreate the issue
+      placeholder: |
+        1. Configure Claude Desktop with...
+        2. Try to create a page with...
+        3. See error...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: What should happen?
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual Behavior
+      description: What actually happens?
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Environment
+      description: Your setup details
+      placeholder: |
+        - OS: macOS 14.5
+        - Claude Desktop: v1.2.3
+        - MCP Server: @notionhq/notion-mcp-server
+        - Notion API Version: 2022-06-28
+    validations:
+      required: true
+  - type: textarea
+    id: config
+    attributes:
+      label: Configuration
+      description: Your claude_desktop_config.json (remove sensitive tokens)
+      render: json
+  - type: textarea
+    id: logs
+    attributes:
+      label: Error Logs
+      description: Any error messages or logs
+      render: text

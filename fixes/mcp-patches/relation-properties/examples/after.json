@@ -1,0 +1,15 @@
+{
+  "properties": {
+    "relationField": {
+      "type": "relation",
+      "relation": [
+        { "id": "1" },
+        { "id": "2" }
+      ],
+      "related_pages": [
+        { "id": "1", "title": "Page 1" },
+        { "id": "2", "title": "Page 2" }
+      ]
+    }
+  }
+}

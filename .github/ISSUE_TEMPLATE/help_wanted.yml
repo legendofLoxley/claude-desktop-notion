@@ -1,0 +1,17 @@
+name: 🙋 Help Wanted
+description: Request help or guidance from the community
+title: "[HELP] "
+labels: ["help wanted"]
+body:
+  - type: textarea
+    id: question
+    attributes:
+      label: What do you need help with?
+      description: Describe your question or problem in detail.
+    validations:
+      required: true
+  - type: textarea
+    id: context
+    attributes:
+      label: Context
+      description: Any relevant background, code, or links?

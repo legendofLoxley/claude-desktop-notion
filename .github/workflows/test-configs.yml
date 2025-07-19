@@ -1,0 +1,24 @@
+name: Test Claude Configs
+
+on:
+  pull_request:
+    paths:
+      - 'templates/claude-configs/**'
+      - 'fixes/claude-configs/**'
+
+jobs:
+  validate-configs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - name: Install dependencies
+        run: npm install -g @anthropic-ai/claude-cli
+      - name: Validate JSON configs
+        run: |
+          find . -name "*.json" -path "*/claude-configs/*" | xargs -I {} sh -c 'echo "Validating {}" && cat {} | jq .'
+      - name: Test config structure
+        run: node tools/config-validator.js

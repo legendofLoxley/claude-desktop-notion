@@ -1,0 +1,11 @@
+{
+  "properties": {
+    "relationField": {
+      "type": "relation",
+      "relation": [
+        { "id": "1" },
+        { "id": "2" }
+      ]
+    }
+  }
+}
